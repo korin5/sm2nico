@@ -11,18 +11,14 @@
 // ==/UserScript==
 
 (function() {
+    var smNum;
 
-
-    for(var i = 1;i < 5;i += 1){
-        
-        setTimeout(()=>{
-            var smnum = document.querySelector("a[href*='acg.tv/sm']").innerHTML;
-            document.querySelector("a[href*='acg.tv/sm']").classList.add("smnum");
-            
-            document.querySelector(".smnum").setAttribute("href","https://www.nicovideo.jp/watch/"+smnum);
-            document.querySelector(".smnum").innerHTML = "跳转" + smnum;
-        }, 2000);
-    }
-    console.log("运行完毕");
+    
+    setTimeout(()=>{
+        smNum = document.querySelector("a[href*='acg.tv/sm']").innerHTML;
+        document.querySelector("a[href*='acg.tv/sm']").classList.add("smLink");
+        document.querySelector(".smLink").setAttribute("href","https://www.nicovideo.jp/watch/"+smNum);
+        document.querySelector(".smLink").innerHTML = "跳转" + smNum;
+    }, 2000);
 
 })();
