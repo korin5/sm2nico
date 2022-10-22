@@ -6,7 +6,7 @@
 // @description  try to take over the world!
 // @author       Liang
 // @match        *://www.bilibili.com/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=csdn.net
+// @icon         https://www.bilibili.com/favicon.ico
 // @grant        none
 // ==/UserScript==
 
