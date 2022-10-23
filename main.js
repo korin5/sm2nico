@@ -14,29 +14,30 @@
 
 (function() {
 
+    var sm = 0;
+    var smNum = 0;
 
-    var smNum;
-    var a = document.querySelector('#arc_toolbar_report').id;
+    for(var i = 1;i <= 10; i += 1){
 
-    if(a){
+        setTimeout(()=>{
+            sm2nico();
+        }, i*1000);
 
-        for(var i = 1;i <= 10; i += 1){
-
-            setTimeout(()=>{
-                sm2nico();
-            }, i*1000);
-
-
-            console.log('执行完毕');
-        }
     }
 
 
     function sm2nico(){
-        smNum = document.querySelector("a[href*='acg.tv/sm']").innerHTML;
-        document.querySelector("a[href*='acg.tv/sm']").classList.add("smLink");
-        document.querySelector(".smLink").setAttribute("href","https://www.nicovideo.jp/watch/"+smNum);
-        document.querySelector(".smLink").innerHTML = "跳转" + smNum;
+
+        sm = document.querySelectorAll("a[href*='acg.tv/sm']");
+        if(sm != 0){
+            for(var i = 0 ; i<(sm.length) ; i+=1){
+                smNum = sm[i].innerHTML;
+                sm[i].classList.add("smLink");
+                sm[i].setAttribute("href","https://www.nicovideo.jp/watch/"+smNum);
+                sm[i].innerHTML = "跳转" + smNum;
+            }
+        }
+
     }
 
 })();
